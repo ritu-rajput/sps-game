@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        SPS Game 
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+    *{
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Roboto Condensed', sans-serif;;
+    }
+    .heading{
+        background-color: black;
+        color: white;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container{
+        height: 90vh;
+        background-color: violet;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .main{
+        align-items: center;
+    }
+    .main img{
+        height: 150px;
+        width: 150px;
+    }
+    .ans{
+        padding-top: 20px;
+    }
+    @media screen and (max-width: 600px) {
+      .main{
+          display: flex;
+          flex-direction: column;
+      }
+      .main img{
+        height: 100px;
+        width: 100px;
+      }
+      .btn{
+          margin: 5px;
+      }
+    }
+      
+     
+
+</style>
+<script>
+function chech(click){ 
+    var list=["STONE","PAPER","SCISSOR"]
+    var computer=list[ 
+    Math.floor(Math.random() * list.length)
+ ]; 
+   if (computer==click){
+    document.getElementById("Answer").innerHTML="Right Guess !!!!!!!!  You Both  Selecte "+computer
+   }
+   else{
+    document.getElementById("Answer").innerHTML="Wrong Guess !!!!!! You Select "+click +" Computer Select  "+computer
+   }
+}
+</script>
+<body>
+        <div class="heading">
+        <h1>
+            Stone Paper Scissor
+        </h1>
+        </div>
+        <div class="container">
+        <div class="main">
+        <button type="button" class="btn btn-primary" onclick="chech('STONE')">
+             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.bZvSf0-gH7IngVmEkGpJqgAAAA%26pid%3DApi&f=1" alt=""> 
+            </button>
+
+        <button type="button" class="btn btn-primary" onclick="chech('PAPER')">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.rZDSAgWNG5xqtCZn_fmxNgHaHa%26pid%3DApi&f=1" alt="">
+        </button>
+
+        <button type="button" class="btn btn-primary" onclick="chech('SCISSOR')"> 
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.SZN2lrHT5pzydF7jUZKxbgHaHa%26pid%3DApi&f=1" alt="">
+        </button>
+        <div id="Answer" class="ans">
+        </div>
+        </div>
+    </div>
+</body>
